@@ -1,0 +1,84 @@
+config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+dotfiles:
+  d_lock:
+    dst: ~/.config/i3/lock
+    src: config/i3/lock
+  f_compton.conf:
+    dst: ~/.config/compton.conf
+    src: config/compton.conf
+  f_config.bak:
+    dst: ~/.config/polybar/config.bak
+    src: config/polybar/config.bak
+  f_gtkrc-2.0:
+    dst: ~/.gtkrc-2.0
+    src: gtkrc-2.0
+  f_i3_config:
+    dst: ~/.config/i3/config
+    src: config/i3/config
+  f_lock.sh:
+    dst: ~/.config/i3/Lock.sh
+    src: config/i3/Lock.sh
+  f_mpris.sh:
+    dst: ~/.config/polybar/mpris.sh
+    src: config/polybar/mpris.sh
+  f_musicworkspaceswitcher.sh:
+    dst: ~/.config/polybar/musicWorkspaceSwitcher.sh
+    src: config/polybar/musicWorkspaceSwitcher.sh
+  f_pavolume.sh:
+    dst: ~/.config/polybar/pavolume.sh
+    src: config/polybar/pavolume.sh
+  f_playpause.sh:
+    dst: ~/.config/polybar/playpause.sh
+    src: config/polybar/playpause.sh
+  f_polybar_config:
+    dst: ~/.config/polybar/config
+    src: config/polybar/config
+  f_powerline-shell.json:
+    dst: ~/.powerline-shell.json
+    src: powerline-shell.json
+  f_redshift.sh:
+    dst: ~/.config/polybar/redshift.sh
+    src: config/polybar/redshift.sh
+  f_rofi_config:
+    dst: ~/.config/rofi/config
+    src: config/rofi/config
+  f_settings.ini:
+    dst: ~/.config/gtk-3.0/settings.ini
+    src: config/gtk-3.0/settings.ini
+  f_setwallpaper.sh:
+    dst: ~/.config/i3/SetWallpaper.sh
+    src: config/i3/SetWallpaper.sh
+  f_termite_config:
+    dst: ~/.config/termite/config
+    src: config/termite/config
+  f_vimrc:
+    dst: ~/.vimrc
+    src: vimrc
+  f_xinitrc:
+    dst: ~/.xinitrc
+    src: xinitrc
+profiles:
+  deep-blue:
+    dotfiles:
+    - f_vimrc
+    - f_gtkrc-2.0
+    - f_powerline-shell.json
+    - f_xinitrc
+    - f_compton.conf
+    - f_settings.ini
+    - f_i3_config
+    - d_lock
+    - f_lock.sh
+    - f_setwallpaper.sh
+    - f_polybar_config
+    - f_config.bak
+    - f_mpris.sh
+    - f_musicworkspaceswitcher.sh
+    - f_pavolume.sh
+    - f_playpause.sh
+    - f_redshift.sh
+    - f_rofi_config
+    - f_termite_config

@@ -1,0 +1,3 @@
+xrandr --dpi 144
+udiskie -t &
+exec i3
