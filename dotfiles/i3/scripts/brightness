@@ -1,0 +1,21 @@
+#!/bin/bash
+if [ "$1" == "low" ]
+then
+ light -U 5
+ TEXT=$(light -G)
+elif [ "$1" == "high" ]
+then
+ light -A 5
+ TEXT=$(light -G)
+else
+ echo "Usage volume [low | high | mute]\n"
+fi
+
+ ICON="/usr/share/icons/Adwaita/16x16/status/display-brightness-symbolic.symbolic.png"
+ID=$(cat /home/nikhil/.i3/.dunst_brightness)
+if [ $ID -gt "0" ]
+then
+ dunstify -p -r $ID -i $ICON "Brightness: $TEXT%" >/home/nikhil/.i3/.dunst_brightness
+else
+ dunstify -p -i $ICON "Brightness: $TEXT%" >/home/nikhil/.i3/.dunst_brightness
+fi

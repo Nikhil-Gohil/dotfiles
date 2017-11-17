@@ -1,0 +1,27 @@
+#!/bin/bash
+if [ "$1" == "low" ]
+then
+pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -3% 
+ ICON="/usr/share/icons/Adwaita/16x16/status/audio-volume-low.png"
+ TEXT=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+elif [ "$1" == "high" ]
+then
+pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +3% 
+ ICON="/usr/share/icons/Adwaita/16x16/status/audio-volume-high.png"
+ TEXT=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+elif [ "$1" == "mute" ]
+then
+pactl set-sink-mute 0 toggle 
+ ICON="/usr/share/icons/Adwaita/16x16/status/audio-volume-muted.png"
+ TEXT=$(pactl list sinks | grep Mute | sed 's/^\s*//;s/\s$//')
+else
+ echo "Usage volume [low | high | mute]\n"
+fi
+
+ID=$(cat /home/nikhil/.i3/.dunst_volume)
+if [ $ID -gt "0" ]
+then
+ dunstify -p -r $ID -i $ICON "Volume: $TEXT" >/home/nikhil/.i3/.dunst_volume
+else
+ dunstify -p -i $ICON "Volume: $TEXT" >/home/nikhil/.i3/.dunst_volume
+fi

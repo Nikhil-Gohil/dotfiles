@@ -6,6 +6,9 @@ dotfiles:
   d_lock:
     dst: ~/.config/i3/lock
     src: config/i3/lock
+  f_brightness:
+    dst: ~/.i3/scripts/brightness
+    src: i3/scripts/brightness
   f_compton.conf:
     dst: ~/.config/compton.conf
     src: config/compton.conf
@@ -57,6 +60,9 @@ dotfiles:
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
+  f_volume:
+    dst: ~/.i3/scripts/volume
+    src: i3/scripts/volume
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
@@ -82,3 +88,5 @@ profiles:
     - f_redshift.sh
     - f_rofi_config
     - f_termite_config
+    - f_brightness
+    - f_volume
