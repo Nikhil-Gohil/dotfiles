@@ -9,9 +9,6 @@ dotfiles:
   f_brightness:
     dst: ~/.i3/scripts/brightness
     src: i3/scripts/brightness
-  f_compton.conf:
-    dst: ~/.config/compton.conf
-    src: config/compton.conf
   f_config.bak:
     dst: ~/.config/polybar/config.bak
     src: config/polybar/config.bak
@@ -73,7 +70,6 @@ profiles:
     - f_gtkrc-2.0
     - f_powerline-shell.json
     - f_xinitrc
-    - f_compton.conf
     - f_settings.ini
     - d_lock
     - f_lock.sh
