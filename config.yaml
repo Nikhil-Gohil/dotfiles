@@ -19,8 +19,8 @@ dotfiles:
     dst: ~/.gtkrc-2.0
     src: gtkrc-2.0
   f_i3_config:
-    dst: ~/.config/i3/config
-    src: config/i3/config
+    dst: ~/.i3/config
+    src: i3/config
   f_lock.sh:
     dst: ~/.config/i3/Lock.sh
     src: config/i3/Lock.sh
@@ -75,7 +75,6 @@ profiles:
     - f_xinitrc
     - f_compton.conf
     - f_settings.ini
-    - f_i3_config
     - d_lock
     - f_lock.sh
     - f_setwallpaper.sh
@@ -90,3 +89,4 @@ profiles:
     - f_termite_config
     - f_brightness
     - f_volume
+    - f_i3_config
