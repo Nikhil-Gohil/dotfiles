@@ -11,7 +11,7 @@ else
  echo "Usage volume [low | high | mute]\n"
 fi
 
- ICON="/usr/share/icons/Adwaita/16x16/status/display-brightness-symbolic.symbolic.png"
+ ICON="/usr/share/icons/Paper/16x16/status/display-brightness-symbolic.symbolic.png"
 ID=$(cat /home/nikhil/.i3/.dunst_brightness)
 if [ $ID -gt "0" ]
 then
